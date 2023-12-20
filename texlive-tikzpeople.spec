@@ -1,6 +1,6 @@
 Name:		texlive-tikzpeople
-Version:	43978
-Release:	2
+Version:	67840
+Release:	1
 Summary:	Draw people-shaped nodes in TikZ
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/tikzpeople
