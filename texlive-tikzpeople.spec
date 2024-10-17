@@ -3,7 +3,7 @@ Version:	67840
 Release:	1
 Summary:	Draw people-shaped nodes in TikZ
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/tikzpeople
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/tikzpeople
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tikzpeople.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tikzpeople.doc.r%{version}.tar.xz
