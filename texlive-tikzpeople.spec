@@ -1,41 +1,25 @@
-Name:		texlive-tikzpeople
-Version:	67840
-Release:	1
+%global tl_name tikzpeople
+%global tl_revision 67840
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.4
+Release:	%{tl_revision}.1
 Summary:	Draw people-shaped nodes in TikZ
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/tikzpeople
+URL:		https://www.ctan.org/tex-archive/graphics/pgf/contrib/tikzpeople
 License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tikzpeople.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tikzpeople.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/tikzpeople.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/tikzpeople.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package provides people-shaped nodes in the style of
-Microsoft Visio clip art, to be used with TikZ. The available,
-highly customizable, node shapes are: alice, bob, bride,
-builder, businessman, charlie, chef, conductor, cowboy,
-criminal, dave, devil, duck, graduate, groom, guard, jester,
-judge, maininblack, mexican, nun, nurse, physician, pilot,
-police, priest, sailor, santa, surgeon.
+This package provides people-shaped nodes in the style of Microsoft
+Visio clip art, to be used with TikZ. The available, highly
+customizable, node shapes are: alice, bob, bride, builder, businessman,
+charlie, chef, conductor, cowboy, criminal, dave, devil, duck, graduate,
+groom, guard, jester, judge, maininblack, mexican, nun, nurse,
+physician, pilot, police, priest, sailor, santa, surgeon.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/tikzpeople
-%doc %{_texmfdistdir}/doc/latex/tikzpeople
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
